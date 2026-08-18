@@ -1,0 +1,11 @@
+title,device,severity,message
+ESXi-Host-04 CPU sustained above 90%,ESXi-Host-04,critical,CPU load has stayed above 90% for over 20 minutes
+Core-FW-02 lost redundant power feed,Core-FW-02,critical,Secondary PSU reporting no input power
+db-prod-05.corp.local disk usage at 92%,db-prod-05.corp.local,critical,Disk space critically low on primary volume
+Blade-Switch-04 fan speed degraded,Blade-Switch-04,warning,Fan RPM below expected threshold on unit 2
+Storage-04 capacity crossed 80% threshold,Storage-04,warning,Capacity utilization has exceeded 80%
+edge-router-03 high latency on WAN link,edge-router-03,warning,Average latency increased to 180ms
+nas-primary-02 backup job delayed,nas-primary-02,warning,Nightly backup job started 45 minutes late
+Scheduled maintenance window starting in 2 days,Core-SW-02,info,Planned maintenance window on Aug 10 2026 02:00-04:00
+Firmware update available for ESXi hosts,ESXi-Host-02,info,New firmware version 8.0.3 available for install
+New device registered in inventory,ws-eng-042,info,Workstation added to inventory via CSV import

@@ -1,0 +1,11 @@
+subject,message,category,priority,status,createdBy,assignee
+VPN drops every few hours,VPN connection disconnects randomly every 2-3 hours since the last client update. Have to reconnect manually each time.,Technical,High,Open,J. Alvarez,
+Invoice PDF missing tax breakdown,The exported invoice PDF no longer shows the itemized tax breakdown that used to appear at the bottom.,Bug Report,Medium,In Progress,M. Chen,Platform Engineering
+Need access to Branch Users module,Requesting access to the Branch Users management module for onboarding new staff at the Nairobi branch.,Access Request,Low,Resolved,S. Okafor,IT Support
+Billing statement shows wrong currency,October statement is showing USD amounts instead of KES for the Nairobi branch account.,Billing,High,Open,S. Okafor,
+Feature request: dark mode for reports,Would like the Reports section to support dark mode consistent with the rest of the app.,Feature Request,Low,Open,J. Alvarez,
+Stock count export fails on large batches,Exporting a stock count with more than 2000 line items times out and never downloads the file.,Bug Report,Critical,In Progress,M. Chen,Platform Engineering
+Cannot reset password for new operator account,Password reset email is not arriving for a newly created operator account.,Technical,High,Resolved,D. Mensah,IT Support
+Question about tax configuration rules,Need clarification on how compound tax rules are applied for imported items.,Other,Low,Closed,D. Mensah,
+Duplicate alerts being generated,Getting duplicate critical alerts for the same device within a few seconds of each other.,Bug Report,Medium,Open,S. Okafor,
+Request for read-only auditor role,Need a new read-only role for our external auditor to review activity logs without edit access.,Access Request,Medium,In Progress,J. Alvarez,IT Support

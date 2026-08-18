@@ -1,0 +1,11 @@
+name,type,location,status,capacityTotalGb,capacityUsedGb,notes
+san-array-01,SAN,NY-DC1 · Rack 11,Online,20000,14300,Primary SAN array for VM datastores
+san-array-02,SAN,SF-HQ · Floor 2,Online,15000,9800,Secondary SAN array
+nas-primary-01,NAS,NY-DC1 · Rack 12,Online,8000,7400,Primary file share nearing capacity
+nas-secondary-02,NAS,SF-HQ · Floor 1,Online,8000,3100,Replication target for nas-primary-01
+s3-backups-01,Object Storage,Cloud · us-east-1,Online,50000,31250,Long-term backup bucket
+gcs-archive-01,Object Storage,Cloud · us-central1,Online,30000,12000,Cold storage archive
+local-disk-web01,Local,NY-DC1 · Rack 08,Online,500,410,Local SSD on web-app-01
+san-array-03,SAN,Frankfurt-DC2 · Row A,Degraded,20000,19100,RAID rebuild in progress after disk failure
+nas-archive-01,NAS,Singapore-DC · Row C,Online,12000,6200,Regional archive share
+cloud-blob-eu-01,Cloud,Cloud · eu-west-1,Offline,10000,0,Provisioned but not yet mounted

@@ -1,0 +1,10 @@
+name,category,model,serial,ip,status,cpu,ram,disk,yearAcquired,location,notes
+Server 1,Server,,,,Online,,,,,,
+Storage 1,Storage,,,,Online,,,,,,
+Storage 2,Storage,,,,Online,,,,,,
+ESXi Host 1,ESXi Host,,,,Online,,,,,,
+ESXi Host 2,ESXi Host,,,,Online,,,,,,
+ESXi Host 3,ESXi Host,,,,Online,,,,,,
+ESXi Host 4,ESXi Host,,,,Online,,,,,,
+Blade Switch 1,Blade Switch,,,,Online,,,,,,
+Blade Switch 2,Blade Switch,,,,Online,,,,,,

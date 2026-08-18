@@ -1,0 +1,11 @@
+name,category,location,ip,status,owner,model,os,serial,macAddress,hostname,notes
+esxi-host-05.corp.local,Server,NY-DC1 · Rack 12,10.10.1.25,Healthy,Platform Engineering,Dell PowerEdge R750,VMware ESXi 8.0,SN-SE20025,3C:E1:A1:01:1A:2B,esxi-host-05.corp.local,Hypervisor host cluster node 5
+esxi-host-06.corp.local,Server,NY-DC1 · Rack 12,10.10.1.26,Healthy,Platform Engineering,Dell PowerEdge R750,VMware ESXi 8.0,SN-SE20026,3C:E1:A1:01:1A:2C,esxi-host-06.corp.local,Hypervisor host cluster node 6
+core-switch-04,Network Device,SF-HQ · Floor 3,10.10.2.13,Healthy,Network Operations,Cisco Catalyst 9300,IOS-XE 17.9,SN-ND20013,3C:E1:A1:01:2A:3B,core-switch-04,Redundant uplink to core-switch-03
+edge-firewall-02,Network Device,Frankfurt-DC2 · Row A,10.10.2.14,Critical,Network Operations,Fortinet FortiGate 100F,FortiOS 7.4,SN-ND20014,3C:E1:A1:01:2A:3C,edge-firewall-02,Lost redundant power feed
+nas-secondary-02,Storage,SF-HQ · Floor 1,10.10.3.12,Healthy,Infrastructure Team,Synology RS3621xs+,DSM 7.2,SN-ST20012,3C:E1:A1:01:3A:4B,nas-secondary-02,Replication target for nas-primary-02
+san-array-04,Storage,Singapore-DC · Row C,10.10.3.13,Warning,Infrastructure Team,Pure Storage FlashArray//C,Purity//FA 6.4,SN-ST20013,3C:E1:A1:01:3A:4C,san-array-04,Capacity utilization crossed 80%
+ws-eng-055,Workstation,Austin Office · IDF-2,10.20.1.30,Healthy,IT Support,Lenovo ThinkPad X1,Windows 11 Pro,SN-WK20030,3C:E1:A1:01:4A:5B,ws-eng-055,Managed endpoint enrolled in MDM
+laptop-coo-01,Workstation,SF-HQ · Floor 1,10.20.1.31,Healthy,IT Support,MacBook Pro 16-inch,macOS Sonoma,SN-WK20031,3C:E1:A1:01:4A:5C,laptop-coo-01,Executive laptop disk encryption enabled
+temp-sensor-dc2-a,IoT Sensor,Frankfurt-DC2 · Row A,10.30.1.20,Healthy,Facilities,SensorPush HT1,Firmware 2.0.1,SN-IO20020,3C:E1:A1:01:5A:6B,temp-sensor-dc2-a,Reports every 60 seconds over MQTT
+power-meter-dc2,IoT Sensor,Frankfurt-DC2 · Row A,10.30.1.21,Warning,Facilities,Bosch FLEXIDOME,Firmware 1.4.2,SN-IO20021,3C:E1:A1:01:5A:6C,power-meter-dc2,Firmware update available

@@ -1,0 +1,11 @@
+name,type,ip,location,status,portsTotal,portsUsed,parentId,equipmentId,notes
+edge-firewall-01,Firewall,10.10.0.1,NY-DC1 · Rack 01,Online,8,4,,,Perimeter firewall with redundant uplinks
+core-switch-01,Switch,10.10.0.10,NY-DC1 · Rack 02,Online,48,39,,,Core aggregation switch for NY-DC1
+core-switch-02,Switch,10.10.0.11,NY-DC1 · Rack 03,Degraded,48,45,,,Fan speed degraded on unit 2
+edge-router-01,Router,10.10.0.20,SF-HQ · Floor 3,Online,4,2,,,Primary WAN router for SF-HQ
+edge-router-02,Router,10.10.0.21,Frankfurt-DC2 · Row A,Offline,4,0,,,Lost connectivity to upstream ISP
+dist-switch-nyc-12,Switch,10.10.1.12,NY-DC1 · Rack 04,Online,24,18,,,Distribution switch rack 04
+dist-switch-sf-04,Switch,10.10.1.14,SF-HQ · Floor 1,Online,24,20,,,Distribution switch floor 1
+wifi-ap-hq-3f,Access Point,10.10.5.30,SF-HQ · Floor 3,Online,1,1,,,Wireless access point third floor
+wifi-ap-hq-1f,Access Point,10.10.5.31,SF-HQ · Floor 1,Degraded,1,1,,,Intermittent signal drops reported
+load-balancer-01,Load Balancer,10.10.6.10,NY-DC1 · Rack 05,Online,8,6,,,Primary application load balancer

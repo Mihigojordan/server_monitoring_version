@@ -1,0 +1,11 @@
+name,role,os,ip,location,status,cpuPct,ramPct,diskPct,uptimeDays,notes
+web-app-01,Web,Ubuntu 22.04 LTS,10.20.0.11,NY-DC1 · Rack 08,Online,42,58,61,182,Primary web frontend behind load balancer
+web-app-02,Web,Ubuntu 22.04 LTS,10.20.0.12,NY-DC1 · Rack 08,Online,38,55,60,182,Secondary web frontend
+db-primary-01,Database,PostgreSQL 15 on Debian 12,10.20.1.10,NY-DC1 · Rack 10,Online,67,81,74,365,Primary database handles all writes
+db-replica-01,Database,PostgreSQL 15 on Debian 12,10.20.1.11,SF-HQ · Floor 2,Online,45,70,68,365,Read replica for reporting queries
+app-worker-03,Application,Ubuntu 22.04 LTS,10.20.2.15,SF-HQ · Floor 2,Degraded,88,76,55,45,High CPU from backlog processing job
+cache-redis-01,Cache,Amazon Linux 2,10.20.3.20,Cloud · us-east-1,Online,22,64,30,120,Redis cluster node for session cache
+mail-relay-01,Mail,Debian 12,10.20.4.12,Frankfurt-DC2 · Row B,Online,15,33,40,400,Outbound SMTP relay
+dns-internal-01,DNS,Ubuntu 22.04 LTS,10.20.5.10,NY-DC1 · Rack 03,Online,8,20,25,500,Internal authoritative DNS
+app-worker-04,Application,Ubuntu 22.04 LTS,10.20.2.16,SF-HQ · Floor 2,Offline,0,0,55,0,Crashed after memory leak pending restart
+db-analytics-02,Database,PostgreSQL 15 on Debian 12,10.20.1.14,Singapore-DC · Row C,Degraded,52,90,88,200,Disk usage climbing needs cleanup
