@@ -59,6 +59,7 @@ import StorageAnalytics from '../pages/PredictiveAnalytics/StorageAnalytics'
 import SwitchAnalytics from '../pages/PredictiveAnalytics/SwitchAnalytics'
 import ResourceUtilization from '../pages/ResourceUtilization/ResourceUtilization'
 import SystemOverview from '../pages/SystemOverview/SystemOverview'
+import ReportManagement from '../pages/ReportManagement/ReportManagement'
 import CostReporting from '../pages/CostReporting/CostReporting'
 import ComplianceAudit from '../pages/ComplianceAudit/ComplianceAudit'
 
@@ -110,6 +111,7 @@ function OperatorApp() {
         <Route path="/reports/stock"     element={<StockReport />} />
         <Route path="/reports/purchases" element={<PurchasesReport />} />
         <Route path="/reports"           element={<Navigate to="/reports/x" replace />} />
+        <Route path="/report-management" element={<ReportManagement />} />
         <Route path="/notices"    element={<Notices />} />
         <Route path="/reference-codes" element={<ReferenceCodes />} />
         <Route path="/alerts"     element={<AlertsCenter />} />
