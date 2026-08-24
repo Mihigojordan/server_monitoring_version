@@ -45,23 +45,6 @@ const NAV_ITEMS = [
     icon: <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M9 17H7A5 5 0 0 1 7 7h2m6 10h2a5 5 0 0 0 0-10h-2" strokeLinecap="round" strokeLinejoin="round"/><line x1="8" y1="12" x2="16" y2="12" strokeLinecap="round"/></svg>,
   },
   {
-    to: 'group:reports', label: 'Reports & Compliance',
-    icon: <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" strokeLinecap="round" strokeLinejoin="round"/><path d="M14 2v6h6M8 13h8M8 17h5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
-    children: [
-      { to: '/cost-reporting', label: 'Cost & TCO Reporting' },
-      { to: '/compliance-audit', label: 'Compliance & Security Audit' },
-    ],
-  },
-  {
-    to: 'group:support', label: 'Support',
-    icon: <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.9 4.9 4.24 4.24M14.86 14.86l4.24 4.24M14.86 9.14l4.24-4.24M4.9 19.1l4.24-4.24" strokeLinecap="round"/></svg>,
-    children: [
-      { to: '/support-tickets', label: 'Support Tickets' },
-      { to: '/support-utilization', label: 'Support Utilization' },
-      { to: '/help-center', label: 'Help Center' },
-    ],
-  },
-  {
     to: 'group:admin', label: 'Administration',
     icon: <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><line x1="4" y1="6" x2="20" y2="6" strokeLinecap="round"/><line x1="4" y1="12" x2="20" y2="12" strokeLinecap="round"/><line x1="4" y1="18" x2="20" y2="18" strokeLinecap="round"/><circle cx="9" cy="6" r="2" fill="var(--surface)"/><circle cx="15" cy="12" r="2" fill="var(--surface)"/><circle cx="9" cy="18" r="2" fill="var(--surface)"/></svg>,
     children: [
@@ -79,7 +62,7 @@ const LANGUAGES = [
 ]
 
 export default function AppShell({ children }) {
-  const { user, logout, vsdcStatus } = useApp()
+  const { user, logout } = useApp()
   const navigate = useNavigate()
 
   const [collapsed, setCollapsed] = useState(false)
@@ -170,14 +153,8 @@ export default function AppShell({ children }) {
 
       {/* ── SIDEBAR ── */}
       <aside className="sidebar">
-        <div className="sidebar__brand">
-          <BrandMark size={38} />
-          {!collapsed && (
-            <div className="sidebar__brand-text">
-              <div className="brand-name">InfraMonitor</div>
-              <div className="brand-sub">Infra Management</div>
-            </div>
-          )}
+        <div className="sidebar__brand" style={{ justifyContent: 'center' }}>
+          {collapsed ? <BrandMark size={26} /> : <BrandMark fill fillPct="80%" />}
         </div>
 
         {!collapsed && <div className="sidebar__section">Operations</div>}
@@ -234,32 +211,24 @@ export default function AppShell({ children }) {
           })}
         </nav>
 
-        <div className="sidebar__device" style={{ marginTop: 'auto' }}>
-          <div className="device-card">
-            {!collapsed ? (
-              <>
-                <div className="device-card__row">
-                  <span>System status</span>
-                  <b className={`device-card__pulse${vsdcStatus === 'offline' ? ' device-card__pulse--offline' : vsdcStatus === 'checking' ? ' device-card__pulse--checking' : ''}`}>
-                    {vsdcStatus === 'online' ? 'Online' : vsdcStatus === 'offline' ? 'Offline' : '…'}
-                  </b>
-                </div>
-                <div className="device-card__row">
-                  <span>TIN</span>
-                  <b style={{ fontFamily: 'var(--font-mono)', fontSize: 11.5 }}>{displayUser.tin}</b>
-                </div>
-                <div className="device-card__row">
-                  <span>Branch</span>
-                  <b style={{ fontSize: 11.5 }}>{displayUser.branch}</b>
-                </div>
-              </>
-            ) : (
+        {!collapsed ? (
+          <div className="sidebar__device" style={{ marginTop: 'auto' }}>
+            <div className="device-card">
+              <div className="device-card__row">
+                <span>System status</span>
+                <b className="device-card__pulse">Online</b>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="sidebar__device" style={{ marginTop: 'auto' }}>
+            <div className="device-card">
               <div style={{ display: 'flex', justifyContent: 'center', padding: '4px 0' }}>
                 <span className="device-card__pulse" style={{ fontSize: 10 }}>●</span>
               </div>
-            )}
+            </div>
           </div>
-        </div>
+        )}
       </aside>
 
       {/* ── MAIN ── */}

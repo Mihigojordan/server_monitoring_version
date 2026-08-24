@@ -124,14 +124,8 @@ export default function AdminShell({ children }) {
       <aside className="sidebar">
 
         {/* Brand */}
-        <div className="sidebar__brand">
-          <BrandMark size={38} />
-          {!collapsed && (
-            <div className="sidebar__brand-text">
-              <div className="brand-name">InfraMonitor</div>
-              <div className="brand-sub">Management Console</div>
-            </div>
-          )}
+        <div className="sidebar__brand" style={{ justifyContent: 'center' }}>
+          {collapsed ? <BrandMark size={26} /> : <BrandMark fill fillPct="80%" />}
         </div>
 
         {!collapsed && <div className="sidebar__section">Management</div>}
