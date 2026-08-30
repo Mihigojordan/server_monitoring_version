@@ -1,6 +1,5 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import ReactCountryFlag from 'react-country-flag'
 import BrandMark from '../ui/BrandMark'
 import { useApp } from '../../context/AppContext'
 import { logActivity } from '../../hooks/useActivityLog'
@@ -55,20 +54,12 @@ const NAV_ITEMS = [
   },
 ]
 
-const LANGUAGES = [
-  { code: 'en', label: 'English', countryCode: 'GB' },
-  { code: 'fr', label: 'Français', countryCode: 'FR' },
-  { code: 'rw', label: 'Kinyarwanda', countryCode: 'RW' },
-]
-
 export default function AppShell({ children }) {
   const { user, logout } = useApp()
   const navigate = useNavigate()
 
   const [collapsed, setCollapsed] = useState(false)
   const [theme, setTheme] = useState(() => localStorage.getItem('op-theme') || 'light')
-  const [lang, setLang] = useState(() => localStorage.getItem('op-lang') || 'en')
-  const [langOpen, setLangOpen] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const profileRef = useRef(null)
@@ -85,15 +76,6 @@ export default function AppShell({ children }) {
     document.addEventListener('fullscreenchange', onFsChange)
     return () => document.removeEventListener('fullscreenchange', onFsChange)
   }, [])
-
-  // Close lang dropdown on outside click
-  const closeLang = useCallback((e) => {
-    if (!e.target.closest('.lang-picker')) setLangOpen(false)
-  }, [])
-  useEffect(() => {
-    if (langOpen) document.addEventListener('mousedown', closeLang)
-    return () => document.removeEventListener('mousedown', closeLang)
-  }, [langOpen, closeLang])
 
   // Close profile dropdown on outside click
   useEffect(() => {
@@ -122,15 +104,6 @@ export default function AppShell({ children }) {
     }
   }
 
-  function selectLang(code) {
-    const l = LANGUAGES.find(x => x.code === code)
-    setLang(code)
-    localStorage.setItem('op-lang', code)
-    setLangOpen(false)
-    logActivity({ action: 'CHANGE_LANGUAGE', category: 'System', summary: `Changed interface language to ${l?.label || code}` })
-  }
-
-  const currentLang = LANGUAGES.find(l => l.code === lang) || LANGUAGES[0]
 
   const displayUser = user || {
     name: 'Operator', role: 'Device Operator', initials: 'OP',
@@ -277,37 +250,6 @@ export default function AppShell({ children }) {
                 </svg>
               )}
             </button>
-
-            {/* Language picker */}
-            <div className="lang-picker">
-              <button className="icon-btn" title="Language" onClick={() => setLangOpen(o => !o)}>
-                <ReactCountryFlag
-                  countryCode={currentLang.countryCode}
-                  svg
-                  style={{ width: 22, height: 16, borderRadius: 2 }}
-                  title={currentLang.label}
-                />
-              </button>
-              {langOpen && (
-                <div className="lang-dropdown">
-                  {LANGUAGES.map(l => (
-                    <button
-                      key={l.code}
-                      className={`lang-dropdown__item${lang === l.code ? ' is-active' : ''}`}
-                      onClick={() => selectLang(l.code)}
-                      title={l.label}
-                    >
-                      <ReactCountryFlag
-                        countryCode={l.countryCode}
-                        svg
-                        style={{ width: 26, height: 19, borderRadius: 2 }}
-                        title={l.label}
-                      />
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
 
             {/* Dark / light toggle */}
             <button className="icon-btn" title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'} onClick={toggleTheme}>
